@@ -25,7 +25,9 @@ public class HbmRun {
                 System.out.println(row);
             }
             System.out.println(selectById(1, sf));
-            System.out.println(selectByName("Mike", sf));
+            for (Object row: selectByName("Mike", sf)) {
+                System.out.println(row);
+            }
             update("Luke", "7 years", 7000, 3, sf);
             System.out.println(selectById(3, sf));
             insert(1, 4000, sf);
@@ -92,11 +94,11 @@ public class HbmRun {
      * @param sf SessionFactory
      * @return найденные данные.
      */
-    public static Object selectByName(String name, SessionFactory sf) {
+    public static List selectByName(String name, SessionFactory sf) {
         Session session = sf.openSession();
         session.beginTransaction();
-        Object result = session.createQuery("from Candidate c where c.name = :Name")
-                .setParameter("Name", name).uniqueResult();
+        List result = session.createQuery("from Candidate c where c.name = :Name")
+                .setParameter("Name", name).list();
         session.getTransaction().commit();
         session.close();
         return result;
