@@ -1,4 +1,4 @@
-package ru.job4j.hql;
+package ru.job4j.hql.one;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
