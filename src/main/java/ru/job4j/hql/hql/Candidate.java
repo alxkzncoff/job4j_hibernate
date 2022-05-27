@@ -1,4 +1,4 @@
-package ru.job4j.hql.one;
+package ru.job4j.hql.hql;
 
 import javax.persistence.*;
 import java.util.Objects;
