@@ -19,10 +19,10 @@
 
         <mapping class="ru.job4j.hql.hql.Candidate" />
 
-        <mapping class="ru.job4j.hql.many.Company" />
-        <mapping class="ru.job4j.hql.many.Model" />
-
         <mapping class="ru.job4j.hql.manytomany.Book" />
         <mapping class="ru.job4j.hql.manytomany.Author" />
+
+        <mapping class="ru.job4j.hql.lazy.Company" />
+        <mapping class="ru.job4j.hql.lazy.Model" />
     </session-factory>
 </hibernate-configuration>
