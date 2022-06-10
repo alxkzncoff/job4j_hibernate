@@ -18,6 +18,8 @@
         <property name="use_sql_comments">true</property>
 
         <mapping class="ru.job4j.hql.hql.Candidate" />
+        <mapping class="ru.job4j.hql.hql.VacanciesDB" />
+        <mapping class="ru.job4j.hql.hql.Vacancy" />
 
         <mapping class="ru.job4j.hql.manytomany.Book" />
         <mapping class="ru.job4j.hql.manytomany.Author" />

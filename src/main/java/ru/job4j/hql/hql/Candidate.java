@@ -3,6 +3,11 @@ package ru.job4j.hql.hql;
 import javax.persistence.*;
 import java.util.Objects;
 
+/**
+ * Класс кандидат.
+ * @author Aleksandr Kuznetsov.
+ * @version 1.0
+ */
 @Entity
 @Table(name = "candidates")
 public class Candidate {
@@ -13,6 +18,9 @@ public class Candidate {
     private String name;
     private String experience;
     private int salary;
+
+    @OneToOne
+    private VacanciesDB db;
 
     public Candidate() {
     }
@@ -57,13 +65,21 @@ public class Candidate {
         this.salary = salary;
     }
 
+    public VacanciesDB getDb() {
+        return db;
+    }
+
+    public void setDb(VacanciesDB db) {
+        this.db = db;
+    }
+
     @Override
     public String toString() {
-        return "Candidate: "
-                + "id=" + id
-                + ", name='" + name + '\''
-                + ", experience='" + experience + '\''
-                + ", salary=" + salary;
+        return "Candidate: id=" + id
+                + ", name='" + name
+                + ", experience='" + experience
+                + ", salary=" + salary
+                + ", db={" + db + "}";
     }
 
     @Override
